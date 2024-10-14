@@ -90,6 +90,7 @@ if (process.client) {
 
 <template>
 	<ClientOnly>
+		<nuxt-link class="block mb-4 hover" to="/">Перейти на главную</nuxt-link>
 		<Cards :items="cards" @edit="handleEdit" @delete="handleDelete" />
 		<div class="flex gap-16 mt-4" :class="{ 'flex-col': !isMediumScreen }">
 			<div class="flex-1">
