@@ -80,6 +80,12 @@ const remove = () => {
 	removeCard(state.id);
 	isModalVisible.value = false;
 };
+
+if (process.client) {
+	window.addEventListener("storage", () => {
+		updateValues($storage.getItem("cards"));
+	});
+}
 </script>
 
 <template>

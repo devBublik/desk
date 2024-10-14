@@ -9,6 +9,12 @@ const { updateValues, removeCard } = store;
 onMounted(() => {
 	updateValues($storage.getItem("cards"));
 });
+
+if (process.client) {
+	window.addEventListener("storage", () => {
+		updateValues($storage.getItem("cards"));
+	});
+}
 </script>
 <template>
 	<div>
